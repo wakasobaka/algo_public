@@ -1,7 +1,7 @@
 #pragma once
 
 #include "tree_node.h"
-#include "bst_print_pretty.h"
+#include "binary_tree_print_pretty.h"
 
 #include <vector>
 
@@ -29,7 +29,7 @@
 // 3. Insert (into the right subtree) the right subarray elements
 // 4. Recurse
 
-namespace bst
+namespace binary_tree
 {
 
 Node* create_min_bst_resursive(const std::vector<int>& v, int l, int r)
@@ -55,11 +55,11 @@ Node* test_create_from_sorted_array()
 {
     //std::vector<int> v = {1, 4, 6, 12, 14, 22, 67, 111, 115};
 
-    std::vector<int> v = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    std::vector<int> v = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
 
     Node* root = create_min_bst(v);
 
-    printPretty(root);
+    binary_tree::printPretty(root);
 
     return root;
 }
@@ -73,4 +73,4 @@ Node* test_create_from_sorted_array()
 // 4 5 6 7
 // Output will be 4 5 6 7 2 3 1
 
-} // namespace bst
+} // namespace binary_tree

@@ -1,7 +1,8 @@
 #include "tree_node.h"
 #include "bst_create.h"
-#include "bst_print_pretty.h"
-#include "tree_traversal.h"
+#include "binary_tree_print_pretty.h"
+#include "binary_tree_traversal_dfs.h"
+#include "binary_tree_traversal_bfs.h"
 
 #include <cstdlib>
 
@@ -16,21 +17,30 @@ int main()
     Node* node = bst::test_create_from_sorted_array();
 
     std::cout << "recursive inorder: ";
-    bst::traversal::recursive::print_inorder(node);
+    binary_tree::traversal_dfs::recursive::print_inorder(node);
     std::cout << std::endl;
 
     std::cout << "recursive preorder: ";
-    bst::traversal::recursive::print_preorder(node);
+    binary_tree::traversal_dfs::recursive::print_preorder(node);
     std::cout << std::endl;
 
     std::cout << "recursive postorder: ";
-    bst::traversal::recursive::print_postorder(node);
+    binary_tree::traversal_dfs::recursive::print_postorder(node);
     std::cout << std::endl;
 
     std::cout << "iterative inorder: ";
-    bst::traversal::recursive::print_inorder(node);
+    binary_tree::traversal_dfs::iterative::print_inorder(node);
     std::cout << std::endl;
 
+    std::cout << "iterative preorder: ";
+    binary_tree::traversal_dfs::iterative::print_preorder(node);
+    std::cout << std::endl;
+
+    std::cout << "iterative postorder: ";
+    //binary_tree::traversal_dfs::iterative::print_postorder(node);
+    std::cout << std::endl;
+
+    std::cout << "height: " << binary_tree::traversal_bfs::recursive::calc_height(node) << std::endl;
 
     return EXIT_SUCCESS;
 }
